@@ -57,7 +57,7 @@ ret.homePage = `
             <label for="password">Password: </label>
             <input type="password" name="password" id="password" />
         </p>
-        <input class="submit" type="submit" value="Enter" />
+        <input class="submit" type="submit" value="Entrar" />
     </form>
     </body>
 </html>`
