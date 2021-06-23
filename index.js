@@ -186,6 +186,7 @@ app.post("/message", (req, res) => {
 
     if (!user) {
         hackers.push(newMessage)
+        console.log('hackers', hackers)
         res.send(ret.tokenErrorPage)
         return false
     }
@@ -203,10 +204,8 @@ app.post("/message", (req, res) => {
             </div>
         </body>
     </html>`
-
-
+    console.log('messages',messages)
     res.send(finishPage)
-    console.log(messages)
 });
 
 app.post("/logout", (req, res) => {
@@ -219,15 +218,17 @@ app.post("/logout", (req, res) => {
 
     if (!user) {
         hackers.push(sessionToken)
+        console.log('hackers', hackers)
         res.send(ret.tokenErrorPage)
         return false
     }
 
     const findUserToken = users.findIndex(value => value === user);
     users[findUserToken].token = undefined
-    res.send(ret.homePage)
 
-    console.log(users);
+    console.log('users',users);
+
+    res.send(ret.homePage)
 });
 
 app.listen(8080);
